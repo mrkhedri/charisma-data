@@ -1,0 +1,711 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Book: Streaming System</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="eb365ace-7da3-4cab-a4c6-12e0f5d70ab1" class="page mono"><header><img class="page-cover-image" src="https://th.bing.com/th/id/R.6c20781d349dc072598562e0d9c72e4b?rik=EIFGaNGhZbyEtA&amp;riu=http%3a%2f%2fstreamingsystems.net%2fstatic%2fimages%2fstreaming_systems_color_cover.png&amp;ehk=e2o%2fIKsbgbLAPGitEdVlJYjsYFZYNbzxtmqN3lebeOw%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" style="object-position:center 21.419999999999995%"/><h1 class="page-title">Book: Streaming System</h1><p class="page-description"></p></header><div class="page-body"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Chapter 2. The <mark class="highlight-yellow">What</mark>, <mark class="highlight-blue">Where</mark>, <mark class="highlight-teal">When</mark>, and <mark class="highlight-red">How</mark> of Data Processing</summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Roadmap</summary><div class="indented"><p id="09cddc78-5ca7-4054-8949-4bcf40f6161b" class="">From chapter 1.<div class="indented"><ol type="1" id="3fbe6c89-fc4a-49a8-b7ca-02d7fa957384" class="numbered-list" start="1"><li>distinction <mark class="highlight-yellow_background">between event</mark> time and <mark class="highlight-yellow_background">processing time</mark></li></ol><ol type="1" id="a03bc8d9-c36b-4a9e-a7ae-4f62e970d620" class="numbered-list" start="2"><li>concept of <mark class="highlight-yellow_background">windowing</mark></li></ol></div></p><p id="7c35f2d8-25e2-4b48-856f-765b15289b64" class="">
+</p><p id="805ac60b-d194-4b87-b2d7-8751b0659dca" class="">We have 3 more in this chapter:<div class="indented"><ol type="1" id="b66f07ce-e4e7-4aba-8fd7-7faa045ddcac" class="numbered-list" start="3"><li><mark class="highlight-pink"><strong>Triggers</strong></mark><br/>mechanism for declaring <br/><mark class="highlight-yellow_background">when the output for a window</mark> should be <mark class="highlight-yellow_background">materialized</mark> relative to some external signal.<br/><br/><br/><mark class="highlight-yellow_background">when</mark> output should be <mark class="highlight-yellow_background">emitted</mark>.<br/><br/>Triggers also make it possible to <br/><mark class="highlight-yellow_background">observe the output</mark> for a window <mark class="highlight-yellow_background">multiple times</mark> as it evolves.<br/><br/>So we can <br/><mark class="highlight-yellow_background">refining results</mark> over time</li></ol><ol type="1" id="4bcef016-6f1a-4ba4-861b-6c67eb479025" class="numbered-list" start="4"><li><mark class="highlight-pink"><strong>Watermarks</strong></mark><br/>a watermark is a notion of <br/><mark class="highlight-yellow_background">input completeness</mark> with respect to event times.<br/><br/>A <br/><mark class="highlight-yellow_background">watermark</mark> with <mark class="highlight-yellow_background">value of X</mark> tell us that <mark class="highlight-yellow_background">all input data</mark> with event times <mark class="highlight-yellow_background">less than X</mark> have been <mark class="highlight-yellow_background">observed</mark>.</li></ol><ol type="1" id="fff5f9d5-32f4-4c43-8348-b8d0e528328a" class="numbered-list" start="5"><li><mark class="highlight-pink"><strong>Accumulation</strong></mark><br/>specifies the <br/><mark class="highlight-yellow_background">relationship between multiple results</mark> that are <mark class="highlight-yellow_background">observed for the same window</mark>.</li></ol></div></p></div></details><p id="a7132f1b-969f-4445-b838-8e1a46f65ca6" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Batch Foundations: <mark class="highlight-yellow">What</mark> and <mark class="highlight-blue">Where</mark></summary><div class="indented"><p id="de4b1886-5f5e-4c2d-b868-68873ac719bd" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><mark class="highlight-yellow">What: </mark>Transformations</summary><div class="indented"><figure id="9989d900-9abe-46b1-9260-99daf906b765" class="image"><a href="Book%20Streaming%20System%20eb365ace7da34caba4c612e0f5d70ab1/stsy_0202.png"><img style="width:652px" src="Book%20Streaming%20System%20eb365ace7da34caba4c612e0f5d70ab1/stsy_0202.png"/></a></figure><figure id="ad01586c-e7bf-4d91-be89-08ca8ed52768"><div class="source"><a href="http://streamingbook.net/static/images/figures/stsy_0203.mp4">http://streamingbook.net/static/images/figures/stsy_0203.mp4</a></div></figure><p id="511d3ab5-70bd-430d-8325-97d6803d0614" class="">
+</p><p id="5b2f606f-da52-41ef-b139-845fa2086ca6" class="">Because this is a batch pipeline, it <mark class="highlight-yellow_background">accumulates state</mark> until it’s seen all of the inputs.</p><p id="9dd58eb9-8e30-4eca-9099-824e5c16637d" class="">and produce single output of 48</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><mark class="highlight-blue">Where:</mark><mark class="highlight-yellow"> </mark>Windowing</summary><div class="indented"><p id="eb735a15-9236-444f-96f2-727b97542889" class="">windowing is the process of slicing up a data source along temporal boundaries.</p><p id="a9f1cbdf-c7cd-47e1-82e6-3f8a628bd42b" class="">
+</p><figure id="4843591b-be9a-4176-8825-9140ea124c98" class="image"><a href="Book%20Streaming%20System%20eb365ace7da34caba4c612e0f5d70ab1/Untitled.png"><img style="width:652px" src="Book%20Streaming%20System%20eb365ace7da34caba4c612e0f5d70ab1/Untitled.png"/></a></figure><p id="d8bf83a0-d8bc-4564-80f3-53dc8c6bb3b4" class="">
+</p><p id="e29e8489-1a06-4ba6-8098-e7fd18d8f27f" class="">in this case <mark class="highlight-yellow_background">inputs are accumulated in state until they are entirely consumed</mark>, after which output is produced.</p></div></details><p id="1517477a-63d3-4fc3-8f6d-0985664d0ffe" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Going Streaming: <mark class="highlight-teal">When</mark> and <mark class="highlight-red">How</mark></summary><div class="indented"><p id="41e8fe4b-b034-40e3-aeba-a3847f38e47e" class="">Now, we like to <mark class="highlight-yellow_background">have lower latency</mark> for our result, and also handle <mark class="highlight-yellow_background">unbounded data</mark> sources.</p><p id="8fbc2057-2727-449b-8251-5ea5758a4753" class="">
+</p><p id="2fd8c71b-cea2-46f9-848d-a37b69f03154" class="">But our previous strategy (batch) of <mark class="highlight-yellow_background">waiting until</mark> our input has been <mark class="highlight-yellow_background">consumed</mark> in it’s entirely to <mark class="highlight-yellow_background">generate output</mark> is <mark class="highlight-yellow_background">no longer feasible</mark>.<div class="indented"><p id="65b032c7-ebc8-4e1a-a5e5-9bc2f03bfbd9" class="">Triggers</p><p id="c56412bc-0e9a-4c4e-a8d6-de850382c546" class="">Watermarks</p></div></p><p id="07477176-2917-4ca1-93eb-1dc2f6e46581" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><mark class="highlight-teal">When</mark>: The Wonderful Thing About Triggers Is Triggers Are Wonderful Things!</summary><div class="indented"><p id="6a5385fd-473c-4163-93d6-38e015b4a796" class=""><mark class="highlight-yellow_background">when</mark> in processing time are <mark class="highlight-yellow_background">results</mark> <mark class="highlight-yellow_background">materialized</mark>?</p><p id="e838cd48-649d-476e-a6c3-68267a8e2de9" class="">Triggers declare <mark class="highlight-yellow_background">when output</mark> for a window <mark class="highlight-yellow_background">should happen</mark> in processing time.</p><p id="90309bd6-e353-4b8b-8f3b-e9707f339cca" class=""><mark class="highlight-yellow_background">Each</mark> specific <mark class="highlight-yellow_background">output</mark> for a window is referred to as a <mark class="highlight-yellow_background">pane of the window</mark>.</p><p id="8afb2e6a-a8b1-4932-9964-991b3a62e07d" class="">
+</p><p id="a6a014a2-e3fd-429e-9472-3dfd627d5e14" class="">Do not forget..! 😁</p><p id="74b16350-7d39-48e9-814d-7abc61710e95" class=""><strong>✅ The following </strong><mark class="highlight-yellow_background"><strong>strategies</strong></mark><strong> are for </strong><mark class="highlight-yellow_background"><strong>panes</strong></mark><strong>. Not window</strong></p><p id="e7ee95aa-e71d-44c9-9f7d-de6319df055d" class="">
+</p><p id="a1c0f961-adcb-42b4-9682-24b41816a924" class="">2 generally types of triggers:<div class="indented"><ol type="1" id="9043cfb7-06dc-4ed1-9247-3b7411459d4a" class="numbered-list" start="1"><li><mark class="highlight-pink"><strong>Repeated update triggers</strong></mark><mark class="highlight-purple"><br/><br/></mark>These periodically generate updated panes for a window.<br/>These updates can be materialized with:<br/><ol type="a" id="95bbe329-771c-499a-ad3b-593fd2529672" class="numbered-list" start="1"><li><strong><mark class="highlight-blue">every new record<br/><br/></mark></strong>issue when processing large scale of data</li></ol><figure id="29305628-76d9-465e-92d8-58f94479d71c"><div class="source"><a href="http://streamingbook.net/static/images/figures/stsy_0206.mp4">http://streamingbook.net/static/images/figures/stsy_0206.mp4</a></div></figure><p id="e1a86f5b-5134-4f75-8c12-344653b6fd84" class="">
+</p><ol type="1" id="e4df363e-188c-4dbe-8d7b-94b4e9567695" class="numbered-list" start="1"><li><strong><mark class="highlight-blue">after some processing-time delay</mark></strong><ol type="a" id="87266534-ab93-4650-a5dc-4f3f10bc1bc1" class="numbered-list" start="1"><li> <strong><mark class="highlight-orange">aligned delays</mark></strong><br/> where the delay slices up processing time into fixed<br/> regions that align across keys and windows<br/></li></ol><figure id="bba09c87-7b4f-4187-a36d-d0add7aaebcc"><div class="source"><a href="http://streamingbook.net/static/images/figures/stsy_0207.mp4">http://streamingbook.net/static/images/figures/stsy_0207.mp4</a></div></figure><p id="7b80c8eb-d8dc-4724-bccc-770357ed8533" class="">
+</p><ol type="1" id="334b2d98-27e0-4b68-83a8-5c0558a38e0c" class="numbered-list" start="1"><li> <mark class="highlight-orange"><strong>unaligned delays</strong></mark><br/> where the delay is relative to the data observed<br/> within a given windows<br/></li></ol><figure id="99368622-9a33-4048-b292-b179f2bf603a"><div class="source"><a href="http://streamingbook.net/static/images/figures/stsy_0208.mp4">http://streamingbook.net/static/images/figures/stsy_0208.mp4</a></div></figure></li></ol><p id="4e98af40-aa1f-4906-be3b-56b3470d701e" class="">
+</p></li></ol><ol type="1" id="65d692c0-b8a8-49aa-9d3a-c420d597feb9" class="numbered-list" start="2"><li><mark class="highlight-pink"><strong>Completeness triggers</strong></mark><mark class="highlight-pink"><br/><br/></mark>These <mark class="highlight-yellow_background">materialize a pane</mark> <mark class="highlight-yellow_background">for a window</mark> only after the input for that <mark class="highlight-yellow_background">window is</mark> believed to be <mark class="highlight-yellow_background">complete</mark> to some threshold.</li></ol></div></p><p id="68a7e519-2e2b-4ceb-92a5-4a6ecd8a4b42" class="">
+</p><p id="bf1646b3-efcc-42da-ad3d-2d6f571cc5fb" class="">It’s very important to have <mark class="highlight-yellow_background">some way</mark> of reasoning <mark class="highlight-yellow_background">about</mark> <mark class="highlight-yellow_background">completeness</mark> rather than blindly trusting the results calculated..!<div class="indented"><p id="7986b3fb-c12c-45bd-a48f-be3aef4f1e37" class="">Watermarks enter 😎</p></div></p><p id="379a006f-0c1c-45a0-bd32-a876e119851b" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><mark class="highlight-teal">When</mark>: Watermarks</summary><div class="indented"><p id="9c878943-293e-49d0-8f8e-24bbb48bc2c3" class="">when in processing time are results materialized?</p><p id="83a3f979-2030-4bbf-96e2-5098dfb5a038" class="">watermarks are temporal notions (مفاهیم زمانی) of input <mark class="highlight-yellow_background">completeness</mark> in the event-time domain.</p><p id="cc9e039a-7bd5-4124-a3cc-ad8c5bb8cdc9" class="">
+</p><figure id="6fdb955d-dced-4d87-8e46-e0ead16f2dbe" class="image"><a href="Book%20Streaming%20System%20eb365ace7da34caba4c612e0f5d70ab1/Untitled%201.png"><img style="width:288px" src="Book%20Streaming%20System%20eb365ace7da34caba4c612e0f5d70ab1/Untitled%201.png"/></a></figure><p id="08f7ee02-e469-47c4-b997-29b4cb0c2739" class="">
+</p><ol type="1" id="f70c958c-6db1-4350-8004-f35f78d9ffd5" class="numbered-list" start="1"><li><mark class="highlight-pink"><strong>Perfect watermark</strong></mark><br/>we have <br/><mark class="highlight-yellow_background">perfect knowledge</mark> of all of the input data.<br/>all data are <br/><mark class="highlight-yellow_background">early</mark> or <mark class="highlight-yellow_background">on time</mark>.</li></ol><ol type="1" id="58ea04c4-9887-49f6-a6fe-87be73fa9e9b" class="numbered-list" start="2"><li><mark class="highlight-pink"><strong>Heuristic watermarks</strong></mark><br/><br/><mark class="highlight-yellow_background">use whatever information</mark> is available about input<br/>- <br/><mark class="highlight-yellow_background">partitions</mark><br/>- <br/><mark class="highlight-yellow_background">ordering</mark> within <mark class="highlight-yellow_background">partitions</mark> if exist<br/>- grows <br/><mark class="highlight-yellow_background">rates</mark> of files<br/>- etc.<br/>provide an <br/><mark class="highlight-yellow_background">estimate</mark> of progress that is as accurate as possible. it <mark class="highlight-yellow_background">might sometimes be wrong</mark> which <mark class="highlight-yellow_background">will lead to late data</mark>.</li></ol><p id="de28805a-8eca-44e8-a946-4da0f4267433" class="">
+</p><figure id="d1f4be07-9961-4e02-b20c-c0db57813833"><div class="source"><a href="http://streamingbook.net/static/images/figures/stsy_0210.mp4">http://streamingbook.net/static/images/figures/stsy_0210.mp4</a></div></figure><p id="caed2a02-0342-401e-9504-b3dd765b6237" class=""><mark class="highlight-red"><strong>Note:</strong></mark> Size of the each columns is not window! it’s just a <mark class="highlight-yellow_background">time of</mark> the <mark class="highlight-yellow_background">completeness of the watermark</mark>.</p><p id="0593f6ca-a95a-4773-9964-110c90e462de" class="">
+</p><p id="c4c341bf-e3e4-47e6-a668-2a8955cf9199" class="">If you have any other question.<div class="indented"><p id="78a7b122-4211-4ccb-a595-c1ae23ddd389" class="">Chapter 3 (Fatemeh Haeri) 😁 </p></div></p><p id="317d0b9e-440d-4bbf-b60a-5addee3bb0c8" class="">
+</p><ol type="1" id="8464686d-dd9d-42fa-92f0-cb9477c94fa0" class="numbered-list" start="1"><li><mark class="highlight-pink"><strong>Too slow </strong></mark><mark class="highlight-default">(left example in the video)</mark><br/>when a watermark of any type is <br/><mark class="highlight-yellow_background">correctly delayed</mark> due to known <mark class="highlight-yellow_background">unprocessed data</mark> (e.g., slowly growing input logs due to network bandwidth constraints), that translates directly into delayed in output if advancement of the watermark is the only thing you depend on for simulating results.</li></ol><ol type="1" id="155530c3-6dc9-4f7a-b148-084747a5c02e" class="numbered-list" start="2"><li><mark class="highlight-pink"><strong>Too fast </strong></mark><mark class="highlight-default">(right example in the video)</mark><br/>when a heuristic watermark is <br/><mark class="highlight-yellow_background">incorrectly advanced</mark> <mark class="highlight-yellow_background">earlier than it should be</mark>, it’s possible for <mark class="highlight-yellow_background">data</mark> with event times <mark class="highlight-yellow_background">before the watermark</mark> to <mark class="highlight-yellow_background">arrive some time later</mark>.<br/>in this case we have <br/><mark class="highlight-yellow_background">incorrect output</mark>.<br/>this is <br/><mark class="highlight-yellow_background">problem</mark> with heuristic watermarks.<br/>it’s a <br/><mark class="highlight-yellow_background">nature</mark> of heuristic watermarks.<br/>so if you care about correctness, you <br/><mark class="highlight-yellow_background">can’t relying on them</mark>.<br/><br/></li></ol><p id="0b537b7e-7814-4820-a16f-2adca3412dba" class="">until now:<div class="indented"><p id="e6d030e1-c2ab-4011-aab2-129b27664aa4" class=""><mark class="highlight-yellow_background">Triggers</mark> provide <mark class="highlight-yellow_background">low-latency</mark> updates and <mark class="highlight-yellow_background">no completeness</mark>.</p><p id="3701f627-2ffb-4c5d-b2d3-1fa725cd8ba6" class=""><mark class="highlight-yellow_background">Watermarks</mark> provide <mark class="highlight-yellow_background">completeness</mark> and <mark class="highlight-yellow_background">possibly high latency</mark>.</p><p id="8abae550-050e-429e-ba0f-79e799b8e35a" class="">
+</p></div></p><p id="32e9fee9-561c-4145-807b-2b743a29dda6" class="">So let’s combine their powers together. 👌</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><mark class="highlight-teal">When:</mark> Early/On-Time/Late Triggers FTW!</summary><div class="indented"><p id="617677cb-422b-48ae-b624-513fccb33a5d" class="">2 main types of triggers:<div class="indented"><ul id="b5c13c68-ea1c-4686-aeb8-a69681d7c4db" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">repeated update</mark> triggers</li></ul><ul id="efec2033-a6e1-4752-b2f7-6287802ca4b6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">completeness/watermark</mark> triggers</li></ul></div></p><p id="7a35385f-2003-4b6c-b2e6-0610c6a513e4" class="">
+</p><ol type="1" id="5feeef40-4a2d-473d-af88-349d0c94d8a0" class="numbered-list" start="1"><li><strong>Zero or more </strong><mark class="highlight-pink"><strong>early</strong></mark><strong> panes</strong><p id="40383b0b-ae1e-4afd-934d-0d7d05bdddeb" class="">result of a <mark class="highlight-yellow_background">repeated update</mark> trigger that <mark class="highlight-yellow_background">periodically fires</mark> up <mark class="highlight-yellow_background">until</mark> the <mark class="highlight-yellow_background">watermark passes</mark> the end of the <mark class="highlight-yellow_background">window</mark>.</p></li></ol><ol type="1" id="30b1b9fc-e249-4e78-969b-c002b658e9ee" class="numbered-list" start="2"><li><strong>A single </strong><mark class="highlight-pink"><strong>on-time</strong></mark><strong> pane</strong><p id="86ca0f4c-447a-4a49-9622-d6817a6b52e2" class="">result of the <mark class="highlight-yellow_background">completeness/watermark</mark> trigger <mark class="highlight-yellow_background">firing after</mark> the <mark class="highlight-yellow_background">watermark passes</mark> the end of the <mark class="highlight-yellow_background">window</mark>.</p></li></ol><ol type="1" id="5eda1517-56d6-49f4-a653-b4e916338352" class="numbered-list" start="3"><li><strong>Zero or more </strong><mark class="highlight-pink"><strong>late</strong></mark><strong> panes</strong><p id="f660d82f-0afb-44aa-ab4c-540b9ed1c0f4" class="">result of a <mark class="highlight-yellow_background">repeated update</mark> trigger that <mark class="highlight-yellow_background">periodically fires</mark> any time late data arrive <mark class="highlight-yellow_background">after</mark> the <mark class="highlight-yellow_background">watermark has passed</mark> the end of the <mark class="highlight-yellow_background">window</mark>.</p></li></ol><p id="460fd870-887a-4298-9a55-f4c3ce2203df" class="">
+</p><p id="54486676-8dbf-48ce-99d5-b95129410ee0" class="">The biggest remaining difference between the <mark class="highlight-pink">perfect</mark> and <mark class="highlight-pink">heuristic</mark> early/on-time/late version at this point is window lifetime bounds..!?<div class="indented"><ol type="1" id="7f53dfa3-17e8-421b-b569-8640cdc9b1d4" class="numbered-list" start="1"><li><mark class="highlight-pink"><strong>perfect</strong></mark><br/>we know 🙂<br/>no more data for a window after watermark has passed.<br/>hence, <br/><mark class="highlight-yellow_background">we can drop all of our state</mark>.</li></ol><ol type="1" id="9c25bc60-3a0b-40d6-a051-0105b7ed64f2" class="numbered-list" start="2"><li><strong><mark class="highlight-pink">heuristic</mark></strong><mark class="highlight-pink"><br/><br/></mark>we don’t know 😞<br/>we have late data<br/>hence, <br/><mark class="highlight-yellow_background">hold data in state for some amount of time</mark> </li></ol></div></p><p id="52c71b9f-08a6-4691-8f66-1a917b7a629e" class="">
+</p><h3 id="360da677-5cb3-4c03-ac0d-9440d0f7e594" class=""><strong>Ok. But,</strong></h3><p id="1fef9543-4429-416b-82b8-7a4e0704069c" class=""><mark class="highlight-yellow_background">how long</mark> <mark class="highlight-yellow_background">state</mark> needs to be <mark class="highlight-yellow_background">kept</mark> around <mark class="highlight-yellow_background">for each window</mark>..???<div class="indented"><p id="b2aa39d8-612a-4a8f-8e2e-0497016cbb16" class="">allowed lateness 😉</p></div></p><p id="363ec496-a7e9-4686-ae2e-dbc111cc7135" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><mark class="highlight-teal">When:</mark> Allowed Lateness (Garbage Collection)</summary><div class="indented"><p id="612e0ec9-1c31-4518-bb22-92522b9e8c46" class="">In the heuristic watermarks, the persistent state for each window lingers around for the entire lifetime..!</p><p id="823ac704-3efd-4c50-9a86-dcd9d16d8765" class="">But, in reality we are dealing with an <mark class="highlight-yellow_background">unbounded data source</mark>.</p><p id="d7a172ff-32b7-4b3a-ac01-1bb13accf85c" class="">So, it’s <mark class="highlight-yellow_background">not practical</mark> to keep state</p><p id="e739bc11-70f1-47e9-8712-f58d44d83bb4" class="">Eventually, run <mark class="highlight-yellow_background">out of disk</mark> space or tire of paying for it.</p><p id="3212104a-570f-431d-b6c5-998143d939b8" class=""><mark class="highlight-red">What should we do? 😒</mark><div class="indented"><p id="5cb205c5-ce5b-450d-9c73-78bd7423b9cb" class=""><mark class="highlight-teal">Garbage Collection ✅</mark><div class="indented"><p id="1cb72f9e-0f2f-483a-9dbb-91bbfe260d65" class="">user-specified lateness threshold 👌</p></div></p></div></p><p id="3c35e33c-4f8e-4d14-a067-17c1da9c5bb9" class="">
+</p><p id="4f1bba1a-f673-470f-b795-782b2ae8fa73" class="">When the <mark class="highlight-yellow_background">watermark passes the lateness</mark> horizon for a window, that window is closed, which means that <mark class="highlight-yellow_background">all state</mark> for the window is <mark class="highlight-yellow_background">discarded</mark>.</p><p id="2a3dfb32-d679-4856-915e-bca87b674a99" class="">
+</p><p id="b7982255-3cb2-4e01-9329-bf9820a43df2" class="">If arrives beyond the lateness..?<div class="indented"><p id="3ec48ee8-5aab-4f43-b904-af8457283fee" class="">It’s simply <mark class="highlight-yellow_background">dropped</mark> 😏</p></div></p><p id="5cfe3e47-4b41-47bd-bdb2-2c05333925c2" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><mark class="highlight-red">How:</mark> Accumulation</summary><div class="indented"><p id="32b2113d-8038-494d-ba49-9fd119cdc342" class="">When triggers are used to <mark class="highlight-yellow_background">produce multiple panes</mark> for <mark class="highlight-yellow_background">a single window</mark> over time</p><p id="3b2422b6-fb06-4f2e-b5d9-bf036ab2668e" class=""><mark class="highlight-red">How</mark> do refinements of results..?</p><p id="09ebd2e8-e245-4f52-b5e6-2dfd20b60de1" class="">
+</p><p id="c7986b71-0712-4be9-9e74-6ef28640a885" class="">We have 3 different modes of accumulation:<div class="indented"><ol type="1" id="dbcac3d2-50e2-4817-9d67-90e7f80d3ad7" class="numbered-list" start="1"><li><mark class="highlight-pink"><strong>Discarding</strong></mark><strong><br/><br/></strong>every time a pane is materialized, any <mark class="highlight-yellow_background">stored state is discarded</mark>.<br/>each successive <br/><mark class="highlight-yellow_background">pane is independent</mark> from any of before panes.<br/>useful when downstream consumer perform accumulation itself.<br/>for example it will <br/><mark class="highlight-yellow_background">sum together</mark> to produce a final count.</li></ol><ol type="1" id="4a3bf474-1634-4b7f-b6fd-1592da2d770d" class="numbered-list" start="2"><li><mark class="highlight-pink"><strong>Accumulating</strong></mark><strong><br/><br/></strong>every time a pane is materialized, any <mark class="highlight-yellow_background">stored state is retained</mark>. and <mark class="highlight-yellow_background">future inputs</mark> are <mark class="highlight-yellow_background">accumulated</mark> <mark class="highlight-yellow_background">into</mark> the <mark class="highlight-yellow_background">existing one</mark>.<br/>each successive <br/><mark class="highlight-yellow_background">pane builds upon the previous panes</mark>.<br/>useful when later results can simply overwrite previous results.<br/>for example when storing output in a <br/><mark class="highlight-yellow_background">key/value store</mark> like HBase or Bigtable.</li></ol><ol type="1" id="ce3a40c5-2405-4316-894f-24588835f535" class="numbered-list" start="3"><li><mark class="highlight-pink"><strong>Accumulating and retracting</strong></mark><strong><br/><br/></strong><mark class="highlight-yellow_background">like accumulation</mark> mode, but when producing a new pane, it also producing <mark class="highlight-yellow_background">independent retractions</mark> for the <mark class="highlight-yellow_background">previous pane(s)</mark>.<br/>I previously told you the result of X 😁<br/>But I was wrong. ☹️<br/><p id="008ad1fd-1c5a-474e-8459-4d353b846b40" class="">Get ride of X <br/>Replace it with Y 👍<br/></p><p id="a85bf598-24f0-427c-aaba-fb1edff815ad" class="">
+</p></li></ol></div></p></div></details><p id="9a8025bf-df59-4bf9-8153-823818cad826" class="">
+</p><p id="3bfa74b2-c2b3-4d5c-87b1-2ff546408ebc" class="">
+</p></div></details><p id="494e900a-a77a-4458-acd8-c8f796011436" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
